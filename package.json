@@ -26,9 +26,12 @@
     "lint:fix": "eslint --fix ./src --ignore-path .gitignore",
     "prettier:check": "prettier --check ./src/**/*.js",
     "prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
-    "test": "jest"
+    "test": "jest",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "coveralls": "^3.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^26.1.0",
