@@ -28,7 +28,8 @@
     "prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
     "test": "jest",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "coveralls": "^3.1.0",
