@@ -9,6 +9,16 @@
 		"email": "eduardo.a1993@gmail.com"
 	},
 	"license": "MIT",
+	"keywords": [
+		"React",
+		"Reactjs",
+		"Rating",
+		"Rating Component",
+		"Pretty rating formater with FontAwesome icons"
+	],
+	"peerDependencies": {
+		"react": "^16.13.1"
+	},
 	"scripts": {
 		"build": "webpack --mode production",
 		"start": "webpack --mode development --watch",
