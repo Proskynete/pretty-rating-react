@@ -1,6 +1,5 @@
-export const createIcon = ({ rating, percentage, icons, iconsNumber }) => {
-	const _percentage = rating ? (rating / 100) * 100 : percentage;
-	let i = _percentage;
+export const createIcon = ({ rating, icons, iconsNumber }) => {
+	let i = rating;
 
 	const iconsToPrint = [];
 	const { complete, half, empty } = icons;
