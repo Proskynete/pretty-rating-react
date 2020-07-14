@@ -2,7 +2,7 @@
 
 A small and simple library that transform you rating in icons for tu web
 
-![Pretty rating React](https://i.imgur.com/JXdOHYV.png 'How to see pretty-rating-react')
+![Pretty rating React](https://imgur.com/U0WgQID.png 'How to see pretty-rating-react')
 
 ## Status
 
