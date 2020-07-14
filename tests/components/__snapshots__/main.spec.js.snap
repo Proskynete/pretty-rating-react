@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrettyRating /> should render component 1`] = `
+Array [
+  <i
+    aria-hidden="true"
+    className="fas fa-star"
+  />,
+  <i
+    aria-hidden="true"
+    className="fas fa-star"
+  />,
+  <i
+    aria-hidden="true"
+    className="fas fa-star"
+  />,
+  <i
+    aria-hidden="true"
+    className="fas fa-star"
+  />,
+  <i
+    aria-hidden="true"
+    className="fas fa-star-half-alt"
+  />,
+]
+`;
