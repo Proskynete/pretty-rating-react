@@ -34,6 +34,8 @@ This is the wrapper component that creates the pretty format of our rating.
 | icons       | object | true     | -       | this object receive 3 attributes (complete, half, empty) | class names foreach elements           |
 | iconsNumber | number | false    | 5       | positive integers numbers                                | number of icons to create              |
 
+The `iconsNumber` determines the number of icons to render, it's related to `rating`. So, if the `iconsNumber` is 5, the rating must be from 0 to 5.
+
 ## How to use it
 
 The following snippet will show you how to use the library: (Example with icons of [FontAwesome](https://fontawesome.com/))
