@@ -1,12 +1,12 @@
 # Pretty rating React
 
-A small and simple library that transform you rating in icons for tu web
+A small and simple library that transform you rating in icons for you web
 
 ![Pretty rating React](https://imgur.com/U0WgQID.png 'How to see pretty-rating-react')
 
 ## Status
 
-[![Coverage Status](https://coveralls.io/repos/github/Proskynete/pretty-rating-react/badge.svg?branch=master)](https://coveralls.io/github/Proskynete/pretty-rating-react?branch=master) ![Version](https://img.shields.io/npm/v/pretty-rating-react.svg) [![Build Status](https://travis-ci.org/Proskynete/pretty-rating-react.svg?branch=master)](https://travis-ci.org/Proskynete/pretty-rating-react) [![dependencies Status](https://david-dm.org/proskynete/pretty-rating-react/status.svg)](https://david-dm.org/proskynete/pretty-rating-react) [![devDependencies Status](https://david-dm.org/proskynete/pretty-rating-react/dev-status.svg)](https://david-dm.org/proskynete/pretty-rating-react?type=dev) [![peerDependencies Status](https://david-dm.org/proskynete/pretty-rating-react/peer-status.svg)](https://david-dm.org/proskynete/pretty-rating-react?type=peer)
+![Version](https://img.shields.io/npm/v/pretty-rating-react.svg) [![Build Status](https://travis-ci.org/Proskynete/pretty-rating-react.svg?branch=master)](https://travis-ci.org/Proskynete/pretty-rating-react) [![Coverage Status](https://coveralls.io/repos/github/Proskynete/pretty-rating-react/badge.svg?branch=master)](https://coveralls.io/github/Proskynete/pretty-rating-react?branch=master) [![dependencies Status](https://david-dm.org/proskynete/pretty-rating-react/status.svg)](https://david-dm.org/proskynete/pretty-rating-react) [![devDependencies Status](https://david-dm.org/proskynete/pretty-rating-react/dev-status.svg)](https://david-dm.org/proskynete/pretty-rating-react?type=dev) [![peerDependencies Status](https://david-dm.org/proskynete/pretty-rating-react/peer-status.svg)](https://david-dm.org/proskynete/pretty-rating-react?type=peer)
 
 ## Getting started
 
@@ -47,34 +47,34 @@ import React, { Component } from 'react';
 import PrettyRating from 'pretty-rating-react';
 
 class Main extends Component {
-	render() {
-		const icons = {
-			complete: 'fas fa-star',
-			half: 'fas fa-star-half-alt',
-			empty: 'far fa-star',
-		};
+ render() {
+  const icons = {
+   complete: 'fas fa-star',
+   half: 'fas fa-star-half-alt',
+   empty: 'far fa-star',
+  };
 
-		return (
-			<>
-				<div>
-					<h3>Title</h3>
-					<PrettyRating rating={3.0} icons={icons} />
-				</div>
-				<div>
-					<h3>Title</h3>
-					<PrettyRating rating={5.0} icons={icons} />
-				</div>
-				<div>
-					<h3>Title</h3>
-					<PrettyRating rating={6.5} icons={icons} iconsNumber={10} />
-				</div>
-				<div>
-					<h3>Title</h3>
-					<PrettyRating rating={8.5} icons={icons} iconsNumber={10} />
-				</div>
-			</>
-		);
-	}
+  return (
+   <>
+    <div>
+     <h3>Title</h3>
+     <PrettyRating rating={3.0} icons={icons} />
+    </div>
+    <div>
+     <h3>Title</h3>
+     <PrettyRating rating={5.0} icons={icons} />
+    </div>
+    <div>
+     <h3>Title</h3>
+     <PrettyRating rating={6.5} icons={icons} iconsNumber={10} />
+    </div>
+    <div>
+     <h3>Title</h3>
+     <PrettyRating rating={8.5} icons={icons} iconsNumber={10} />
+    </div>
+   </>
+  );
+ }
 }
 ```
 
@@ -85,30 +85,30 @@ import React from 'react';
 import PrettyRating from 'pretty-rating-react';
 
 const icons = {
-	complete: 'fas fa-star',
-	half: 'fas fa-star-half-alt',
-	empty: 'far fa-star',
+ complete: 'fas fa-star',
+ half: 'fas fa-star-half-alt',
+ empty: 'far fa-star',
 };
 
 const Main = () => (
-	<>
-		<div>
-			<h3>Title</h3>
-			<PrettyRating rating={3.0} icons={icons} />
-		</div>
-		<div>
-			<h3>Title</h3>
-			<PrettyRating rating={5.0} icons={icons} />
-		</div>
-		<div>
-			<h3>Title</h3>
-			<PrettyRating rating={6.5} icons={icons} iconsNumber={10} />
-		</div>
-		<div>
-			<h3>Title</h3>
-			<PrettyRating rating={8.5} icons={icons} iconsNumber={10} />
-		</div>
-	</>
+ <>
+  <div>
+   <h3>Title</h3>
+   <PrettyRating rating={3.0} icons={icons} />
+  </div>
+  <div>
+   <h3>Title</h3>
+   <PrettyRating rating={5.0} icons={icons} />
+  </div>
+  <div>
+   <h3>Title</h3>
+   <PrettyRating rating={6.5} icons={icons} iconsNumber={10} />
+  </div>
+  <div>
+   <h3>Title</h3>
+   <PrettyRating rating={8.5} icons={icons} iconsNumber={10} />
+  </div>
+ </>
 );
 ```
 
