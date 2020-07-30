@@ -3,7 +3,7 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 
-import PrettyRating from '../../src/main';
+import PrettyRating from '../../src/components/pretty-rating';
 
 Enzyme.configure({ adapter: new Adapter() });
 
