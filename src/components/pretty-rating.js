@@ -29,7 +29,7 @@ PrettyRating.defaultProps = {
 PrettyRating.propTypes = {
 	rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 	icons: PropTypes.shape({ complete: '', half: '', empty: '' }).isRequired,
-	setColors: PropTypes.shape([]),
+	setColors: PropTypes.instanceOf(Array),
 	iconsNumber: PropTypes.number,
 };
 
