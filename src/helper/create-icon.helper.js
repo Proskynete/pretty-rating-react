@@ -11,7 +11,7 @@ export const createIcon = ({ rating, icons, iconsNumber }) => {
 	if (i >= 0.5 && i <= 1) {
 		iconsToPrint.push(half);
 	}
-  
+
 	while (iconsToPrint.length < iconsNumber) {
 		iconsToPrint.push(empty);
 	}
