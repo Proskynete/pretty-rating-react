@@ -7,7 +7,21 @@ const PrettyRating = (props) => {
 	const iconsToRender = createIcon({ rating, icons, iconsNumber });
 
 	return iconsToRender.map((icon) => {
-		return <i key={Math.random()} className={`${icon}`} aria-hidden='true' />;
+		return (
+			<i
+				key={Math.random()}
+				style={{
+					color:
+						icon === icons.complete
+							? setColors[0]
+							: icon === icons.half
+							? setColors[1]
+							: setColors[2],
+				}}
+				className={icon}
+				aria-hidden='true'
+			/>
+		);
 	});
 };
 
