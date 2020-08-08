@@ -5,22 +5,47 @@ Array [
   <i
     aria-hidden="true"
     className="fas fa-star"
+    style={
+      Object {
+        "color": "#000",
+      }
+    }
   />,
   <i
     aria-hidden="true"
     className="fas fa-star"
+    style={
+      Object {
+        "color": "#000",
+      }
+    }
   />,
   <i
     aria-hidden="true"
     className="fas fa-star"
+    style={
+      Object {
+        "color": "#000",
+      }
+    }
   />,
   <i
     aria-hidden="true"
     className="fas fa-star"
+    style={
+      Object {
+        "color": "#000",
+      }
+    }
   />,
   <i
     aria-hidden="true"
     className="fas fa-star-half-alt"
+    style={
+      Object {
+        "color": "#000",
+      }
+    }
   />,
 ]
 `;
