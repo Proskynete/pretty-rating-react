@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createIcon } from '../helper/create-icon.helper';
+import { customStyles } from '../helper/custom-styles.helper';
 
 const PrettyRating = (props) => {
 	const { rating, icons, iconsNumber, setColors } = props;
@@ -11,12 +12,7 @@ const PrettyRating = (props) => {
 			<i
 				key={Math.random()}
 				style={{
-					color:
-						icon === icons.complete
-							? setColors[0]
-							: icon === icons.half
-							? setColors[1]
-							: setColors[2],
+					color: customStyles(icon, icons, setColors),
 				}}
 				className={icon}
 				aria-hidden='true'
