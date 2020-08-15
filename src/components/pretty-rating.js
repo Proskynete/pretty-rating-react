@@ -12,9 +12,14 @@ const PrettyRating = (props) => {
 			<i
 				key={Math.random()}
 				style={{
-					color: customStyles({ currentIcon: icon, icons, colors: setColors }),
+					color: customStyles({
+						currentIcon: icon.name,
+						icons,
+						type: icon.type,
+						colors: setColors,
+					}),
 				}}
-				className={icon}
+				className={icon.name}
 				aria-hidden='true'
 			/>
 		);
