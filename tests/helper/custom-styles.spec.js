@@ -11,27 +11,30 @@ describe('Helper', () => {
 	};
 
 	describe('customColors', () => {
-		it('should return comlete color', () => {
+		it('should return complete color', () => {
 			const currentIcon = 'fas fa-star';
+			const type = 'complete';
 			const { icons, colors } = defaultValues;
 
-			const result = customStyles({ currentIcon, icons, colors });
+			const result = customStyles({ currentIcon, icons, colors, type });
 			expect(result).toEqual('completeColor');
 		});
 
 		it('should return half color', () => {
 			const currentIcon = 'fas fa-star-half-alt';
+			const type = 'half';
 			const { icons, colors } = defaultValues;
 
-			const result = customStyles({ currentIcon, icons, colors });
+			const result = customStyles({ currentIcon, icons, colors, type });
 			expect(result).toEqual('halfColor');
 		});
 
 		it('should return empty color', () => {
 			const currentIcon = 'far fa-star';
+			const type = 'empty';
 			const { icons, colors } = defaultValues;
 
-			const result = customStyles({ currentIcon, icons, colors });
+			const result = customStyles({ currentIcon, icons, colors, type });
 			expect(result).toEqual('emptyColor');
 		});
 	});
