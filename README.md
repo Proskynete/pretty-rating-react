@@ -2,7 +2,7 @@
 
 A small and simple library that transform you rating in icons for you web
 
-![Pretty rating React](https://imgur.com/zjpbBPn.png 'How to see pretty-rating-react')
+![Pretty rating React](https://imgur.com/Pd1vf7k.png 'How to see pretty-rating-react')
 
 ## Status
 
@@ -16,23 +16,18 @@ To install as npm dev dependency
 npm install pretty-rating-react --save-dev
 ```
 
-Or if you preferred, you can use `yarn`
-
-```sh
-yarn add pretty-rating-react --dev
-```
-
 ## API Documentation
 
 ### PrettyRating
 
 This is the wrapper component that creates the pretty format of our rating.
 
-| Name        | Type   | Required | Default | Values Allowed                                           | Description                            |
-| ----------- | ------ | -------- | ------- | -------------------------------------------------------- | -------------------------------------- |
-| rating      | number | true     | -       | positive floats or integers numbers                      | rating that we will transform to icons |
-| icons       | object | true     | -       | this object receive 3 attributes (complete, half, empty) | class names foreach elements           |
-| iconsNumber | number | false    | 5       | positive integers numbers                                | number of icons to create              |
+| Name        | Type   | Required | Default value      | Values Allowed                                           | Description                            |
+| ----------- | ------ | -------- | ------------------ | -------------------------------------------------------- | -------------------------------------- |
+| rating      | number | true     | -                  | Positive floats or integers numbers                      | Rating that we will transform to icons |
+| icons       | object | true     | -                  | This object receive 3 attributes (complete, half, empty) | Class names foreach elements           |
+| iconsNumber | number | false    | 5                  | Positive integers numbers                                | Number of icons to create              |
+| setColors   | array  | false    | [#000, #000, #000] | Hexadecimal colors                                       | Colors with which icons are rendered   |
 
 The `iconsNumber` determines the number of icons to render, it's related to `rating`. So, if the `iconsNumber` is 5, the rating must be from 0 to 5.
 
@@ -49,30 +44,59 @@ import PrettyRating from 'pretty-rating-react';
 class Main extends Component {
  render() {
   const icons = {
-   complete: 'fas fa-star',
-   half: 'fas fa-star-half-alt',
-   empty: 'far fa-star',
+   star: {
+    complete: 'fa fa-star',
+    half: 'fas fa-star-half-alt',
+    empty: 'far fa-star',
+   },
+   heart: {
+    complete: 'fas fa-heart',
+    half: 'fas fa-heart-broken',
+    empty: 'fas fa-heart',
+   },
+  };
+
+  const colors = {
+   star: ['#d9ad26', '#d9ad26', '#434b4d'],
+   heart: ['#9b111e', '#a83f39'],
   };
 
   return (
-   <>
+   <div>
     <div>
-     <h3>Title</h3>
-     <PrettyRating rating={3.0} icons={icons} />
+     <h1>Assesment</h1>
+     <PrettyRating rating={5} icons={icons.star} setColors={colors.star} />
     </div>
+
     <div>
-     <h3>Title</h3>
-     <PrettyRating rating={5.0} icons={icons} />
+     <h1>Assesment</h1>
+     <PrettyRating
+      rating={3.5}
+      icons={icons.star}
+      setColors={colors.star}
+     />
     </div>
+
     <div>
-     <h3>Title</h3>
-     <PrettyRating rating={6.5} icons={icons} iconsNumber={10} />
+     <h1>6.5/10 life points </h1>
+     <PrettyRating
+      rating={6.5}
+      icons={icons.heart}
+      setColors={colors.heart}
+      iconsNumber={10}
+     />
     </div>
+
     <div>
-     <h3>Title</h3>
-     <PrettyRating rating={8.5} icons={icons} iconsNumber={10} />
+     <h1>Full life points </h1>
+     <PrettyRating
+      rating={10}
+      icons={icons.heart}
+      setColors={colors.heart}
+      iconsNumber={10}
+     />
     </div>
-   </>
+   </div>
   );
  }
 }
@@ -85,30 +109,55 @@ import React from 'react';
 import PrettyRating from 'pretty-rating-react';
 
 const icons = {
- complete: 'fas fa-star',
- half: 'fas fa-star-half-alt',
- empty: 'far fa-star',
+ star: {
+  complete: 'fa fa-star',
+  half: 'fas fa-star-half-alt',
+  empty: 'far fa-star',
+ },
+ heart: {
+  complete: 'fas fa-heart',
+  half: 'fas fa-heart-broken',
+  empty: 'fas fa-heart',
+ },
+};
+
+const colors = {
+ star: ['#d9ad26', '#d9ad26', '#434b4d'],
+ heart: ['#9b111e', '#a83f39'],
 };
 
 const Main = () => (
- <>
+ <div>
   <div>
-   <h3>Title</h3>
-   <PrettyRating rating={3.0} icons={icons} />
+   <h1>Assesment</h1>
+   <PrettyRating rating={5} icons={icons.star} setColors={colors.star} />
   </div>
+
   <div>
-   <h3>Title</h3>
-   <PrettyRating rating={5.0} icons={icons} />
+   <h1>Assesment</h1>
+   <PrettyRating rating={3.5} icons={icons.star} setColors={colors.star} />
   </div>
+
   <div>
-   <h3>Title</h3>
-   <PrettyRating rating={6.5} icons={icons} iconsNumber={10} />
+   <h1>6.5/10 life points </h1>
+   <PrettyRating
+    rating={6.5}
+    icons={icons.heart}
+    setColors={colors.heart}
+    iconsNumber={10}
+   />
   </div>
+
   <div>
-   <h3>Title</h3>
-   <PrettyRating rating={8.5} icons={icons} iconsNumber={10} />
+   <h1>Full life points </h1>
+   <PrettyRating
+    rating={10}
+    icons={icons.heart}
+    setColors={colors.heart}
+    iconsNumber={10}
+   />
   </div>
- </>
+ </div>
 );
 ```
 
