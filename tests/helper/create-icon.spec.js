@@ -12,7 +12,7 @@ describe('Helper', () => {
 
 	describe('createIcon', () => {
 		it('should return 5 icons classes to render', () => {
-			const rating = 0.0;
+			const rating = 0;
 			const { icons, iconsNumber } = defaultValues;
 
 			const result = createIcon({ rating, icons, iconsNumber });
@@ -20,7 +20,7 @@ describe('Helper', () => {
 		});
 
 		it('should return 10 icons classes to render', () => {
-			const rating = 0.0;
+			const rating = 0;
 			const { icons } = defaultValues;
 			const iconsNumber = 10;
 
@@ -29,13 +29,18 @@ describe('Helper', () => {
 		});
 
 		it('should return only empty icons', () => {
-			const rating = 0.0;
+			const rating = 0;
 			const { icons, iconsNumber } = defaultValues;
 
 			const result = createIcon({ rating, icons, iconsNumber });
-			expect(result).toEqual(expect.arrayContaining(['far fa-star']));
 			expect(result).toEqual(
-				expect.not.arrayContaining(['fas fa-star', 'fas fa-star-half-alt']),
+				expect.arrayContaining([{ name: 'far fa-star', type: 'empty' }]),
+			);
+			expect(result).toEqual(
+				expect.not.arrayContaining([
+					{ name: 'fas fa-star', type: 'complete' },
+					{ name: 'fas fa-star-half-alt', type: 'half' },
+				]),
 			);
 		});
 
@@ -45,9 +50,14 @@ describe('Helper', () => {
 
 			const result = createIcon({ rating, icons, iconsNumber });
 			expect(result).toEqual(
-				expect.arrayContaining(['fas fa-star-half-alt', 'far fa-star']),
+				expect.arrayContaining([
+					{ name: 'fas fa-star-half-alt', type: 'half' },
+					{ name: 'far fa-star', type: 'empty' },
+				]),
 			);
-			expect(result).toEqual(expect.not.arrayContaining(['fas fa-star']));
+			expect(result).toEqual(
+				expect.not.arrayContaining([{ name: 'fas fa-star', type: 'complete' }]),
+			);
 		});
 
 		it('should return complete, half and empty icons', () => {
@@ -55,17 +65,28 @@ describe('Helper', () => {
 			const { icons, iconsNumber } = defaultValues;
 
 			const result = createIcon({ rating, icons, iconsNumber });
-			expect(result).toEqual(expect.arrayContaining(['fas fa-star']));
+			expect(result).toEqual(
+				expect.arrayContaining([
+					{ name: 'fas fa-star', type: 'complete' },
+					{ name: 'fas fa-star-half-alt', type: 'half' },
+					{ name: 'far fa-star', type: 'empty' },
+				]),
+			);
 		});
 
 		it('should return only complete icons', () => {
-			const rating = 5.0;
+			const rating = 5;
 			const { icons, iconsNumber } = defaultValues;
 
 			const result = createIcon({ rating, icons, iconsNumber });
-			expect(result).toEqual(expect.arrayContaining(['fas fa-star']));
 			expect(result).toEqual(
-				expect.not.arrayContaining(['fas fa-star-half-alt', 'far fa-star']),
+				expect.arrayContaining([{ name: 'fas fa-star', type: 'complete' }]),
+			);
+			expect(result).toEqual(
+				expect.not.arrayContaining([
+					{ name: 'fas fa-star-half-alt', type: 'half' },
+					{ name: 'far fa-star', type: 'empty' },
+				]),
 			);
 		});
 	});
