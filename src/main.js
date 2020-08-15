@@ -1,3 +1,3 @@
 import PrettyRating from './components/pretty-rating';
 
-export { PrettyRating };
+export default PrettyRating;

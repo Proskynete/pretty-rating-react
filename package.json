@@ -1,6 +1,6 @@
 {
   "name": "pretty-rating-react",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "main": "build/index.js",
   "repository": "https://github.com/Proskynete/pretty-rating-react",
@@ -27,6 +27,7 @@
     "prettier:check": "prettier --check ./src/**/*.js",
     "prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
     "test": "jest",
+    "test:update-snapshots": "jest --updateSnapshot",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll"
