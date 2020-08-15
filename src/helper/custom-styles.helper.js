@@ -1,4 +1,4 @@
-export const customStyles = (currentIcon, icons, colors) =>
+export const customStyles = ({ currentIcon, icons, colors }) =>
 	currentIcon === icons.complete
 		? colors[0]
 		: currentIcon === icons.half

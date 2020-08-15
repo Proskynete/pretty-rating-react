@@ -15,7 +15,7 @@ describe('Helper', () => {
 			const currentIcon = 'fas fa-star';
 			const { icons, colors } = defaultValues;
 
-			const result = customStyles(currentIcon, icons, colors);
+			const result = customStyles({ currentIcon, icons, colors });
 			expect(result).toEqual('completeColor');
 		});
 
@@ -23,7 +23,7 @@ describe('Helper', () => {
 			const currentIcon = 'fas fa-star-half-alt';
 			const { icons, colors } = defaultValues;
 
-			const result = customStyles(currentIcon, icons, colors);
+			const result = customStyles({ currentIcon, icons, colors });
 			expect(result).toEqual('halfColor');
 		});
 
@@ -31,7 +31,7 @@ describe('Helper', () => {
 			const currentIcon = 'far fa-star';
 			const { icons, colors } = defaultValues;
 
-			const result = customStyles(currentIcon, icons, colors);
+			const result = customStyles({ currentIcon, icons, colors });
 			expect(result).toEqual('emptyColor');
 		});
 	});
