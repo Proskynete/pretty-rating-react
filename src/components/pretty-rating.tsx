@@ -1,16 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { createIcon } from '../helper/create-icon.helper';
 import { customStyles } from '../helper/custom-styles.helper';
+import { PrettyRatingInterface } from '../types';
 
-const PrettyRating = (props) => {
-	const { rating, icons, iconsNumber, setColors } = props;
+const defaultColors = ['#000', '#000', '#000'];
+
+const PrettyRating = ({
+	rating,
+	icons,
+	iconsNumber = 5,
+	setColors = defaultColors,
+}: PrettyRatingInterface) => {
 	const iconsToRender = createIcon({ rating, icons, iconsNumber });
 
-	return iconsToRender.map((icon) => {
+	return iconsToRender.map((icon, i) => {
 		return (
 			<i
-				key={Math.random()}
+				key={i}
 				style={{
 					color: customStyles({
 						currentIcon: icon.name,
@@ -24,18 +30,6 @@ const PrettyRating = (props) => {
 			/>
 		);
 	});
-};
-
-PrettyRating.defaultProps = {
-	iconsNumber: 5,
-	setColors: ['#000', '#000', '#000'],
-};
-
-PrettyRating.propTypes = {
-	rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-	icons: PropTypes.shape({ complete: '', half: '', empty: '' }).isRequired,
-	setColors: PropTypes.instanceOf(Array),
-	iconsNumber: PropTypes.number,
 };
 
 export default PrettyRating;
