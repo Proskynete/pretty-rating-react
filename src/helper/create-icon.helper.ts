@@ -1,7 +1,13 @@
-export const createIcon = ({ rating, icons, iconsNumber }) => {
-	let i = rating;
+import { CreateIconInterface, CreateIconResponseInterface } from '../types';
 
-	const iconsToPrint = [];
+export const createIcon = ({
+	rating,
+	icons,
+	iconsNumber,
+}: CreateIconInterface): CreateIconResponseInterface[] => {
+	let i = +rating;
+
+	const iconsToPrint: CreateIconResponseInterface[] = [];
 	const { complete, half, empty } = icons;
 
 	for (i; i >= 1; i -= 1) {
