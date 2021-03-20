@@ -1,13 +1,13 @@
-import { CreateIconInterface, CreateIconResponseInterface } from '../types';
+import * as PrettyRatingInterface from '../types';
 
 export const createIcon = ({
 	rating,
 	icons,
 	iconsNumber,
-}: CreateIconInterface): CreateIconResponseInterface[] => {
+}: PrettyRatingInterface.CreateIconProps): PrettyRatingInterface.CreateIconResponse[] => {
 	let i = +rating;
 
-	const iconsToPrint: CreateIconResponseInterface[] = [];
+	const iconsToPrint: PrettyRatingInterface.CreateIconResponse[] = [];
 	const { complete, half, empty } = icons;
 
 	for (i; i >= 1; i -= 1) {

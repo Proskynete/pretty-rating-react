@@ -8,20 +8,20 @@ export interface BaseInterface {
     rating: number | string;
     icons: AllowIconsType;
 }
-export interface PrettyRatingInterface extends BaseInterface {
+export interface Props extends BaseInterface {
     setColors?: string[];
     iconsNumber?: number;
 }
-export interface CreateIconInterface extends BaseInterface {
+export interface CreateIconProps extends BaseInterface {
     iconsNumber: number;
 }
-export interface CustomStylesInterface {
+export interface CustomStylesProps {
     currentIcon: string | IconDefinition;
     icons: AllowIconsType;
     colors: string[];
     type: string;
 }
-export interface CreateIconResponseInterface {
+export interface CreateIconResponse {
     name: string | IconDefinition;
     type: string;
 }

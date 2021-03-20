@@ -1,2 +1,2 @@
-import { CustomStylesInterface } from '../types';
-export declare const customStyles: ({ currentIcon, icons, colors, type, }: CustomStylesInterface) => any;
+import * as PrettyRatingInterface from '../types';
+export declare const customStyles: ({ currentIcon, icons, colors, type, }: PrettyRatingInterface.CustomStylesProps) => any;
