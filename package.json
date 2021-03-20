@@ -1,7 +1,7 @@
 {
 	"name": "pretty-rating-react",
 	"version": "2.0.0",
-	"description": "",
+	"description": "Pretty rating formatter with FontAwesome icons",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
 	"types": "./lib/esm/index.d.ts",
@@ -21,7 +21,7 @@
 		"Reactjs",
 		"Rating",
 		"Rating Component",
-		"Pretty rating formater with FontAwesome icons"
+		"FontAwesome"
 	],
 	"peerDependencies": {
 		"react": "^17.0.1",
@@ -33,7 +33,7 @@
 		"build:esm": "tsc",
 		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
 		"lint": "tslint -p ./",
-		"lint:fix": "tslint -p ./ -f",
+		"lint:fix": "tslint -p ./ --fix",
 		"prettier:check": "prettier --check ./src/**/*.js",
 		"prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
 		"test": "jest",
