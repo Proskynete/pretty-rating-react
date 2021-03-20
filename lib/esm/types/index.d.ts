@@ -1,7 +1,8 @@
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 export interface AllowIconsType {
-    complete: string;
-    half: string;
-    empty: string;
+    complete: string | IconDefinition;
+    half: string | IconDefinition;
+    empty: string | IconDefinition;
 }
 export interface BaseInterface {
     rating: number | string;
@@ -15,12 +16,12 @@ export interface CreateIconInterface extends BaseInterface {
     iconsNumber: number;
 }
 export interface CustomStylesInterface {
-    currentIcon: string;
+    currentIcon: string | IconDefinition;
     icons: AllowIconsType;
     colors: string[];
     type: string;
 }
 export interface CreateIconResponseInterface {
-    name: string;
+    name: string | IconDefinition;
     type: string;
 }
