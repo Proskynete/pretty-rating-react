@@ -1,11 +1,11 @@
-import { CustomStylesInterface } from '../types';
+import * as PrettyRatingInterface from '../types';
 
 export const customStyles = ({
 	currentIcon,
 	icons,
 	colors,
 	type,
-}: CustomStylesInterface): any =>
+}: PrettyRatingInterface.CustomStylesProps): any =>
 	currentIcon === icons.complete && type === 'complete'
 		? colors[0]
 		: currentIcon === icons.half && type === 'half'
