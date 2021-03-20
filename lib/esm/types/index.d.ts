@@ -8,7 +8,7 @@ export interface BaseInterface {
     icons: AllowIconsType;
 }
 export interface PrettyRatingInterface extends BaseInterface {
-    setColors?: String[];
+    setColors?: string[];
     iconsNumber?: number;
 }
 export interface CreateIconInterface extends BaseInterface {
@@ -17,7 +17,7 @@ export interface CreateIconInterface extends BaseInterface {
 export interface CustomStylesInterface {
     currentIcon: string;
     icons: AllowIconsType;
-    colors: String[];
+    colors: string[];
     type: string;
 }
 export interface CreateIconResponseInterface {
