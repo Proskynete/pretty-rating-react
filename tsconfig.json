@@ -19,11 +19,6 @@
 		"suppressImplicitAnyIndexErrors": true,
 		"allowSyntheticDefaultImports": true
 	},
-	"include": [
-		"./src/**/*.ts",
-		"./src/**/*.tsx",
-		"./test/**/*.ts",
-		"./test/**/*.tsx"
-	],
+	"include": ["./src/**/*.ts", "./src/**/*.tsx"],
 	"exclude": ["./node_modules/", "./lib/"]
 }
