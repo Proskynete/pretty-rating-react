@@ -1,4 +1,4 @@
-import { createIcon } from '../../src/helper/create-icon.helper';
+import { createIcon } from '../../src/helpers/create-icon.helper';
 
 describe('Helper', () => {
 	const defaultValues = {

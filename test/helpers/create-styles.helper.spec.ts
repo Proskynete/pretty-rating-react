@@ -1,4 +1,4 @@
-import { customStyles } from '../../src/helper/custom-styles.helper';
+import { customStyles } from '../../src/helpers/custom-styles.helper';
 
 describe('Helper', () => {
 	const defaultValues = {

@@ -1,7 +1,13 @@
-export const createIcon = ({ rating, icons, iconsNumber }) => {
-	let i = rating;
+import * as PrettyRatingInterface from '../types';
 
-	const iconsToPrint = [];
+export const createIcon = ({
+	rating,
+	icons,
+	iconsNumber,
+}: PrettyRatingInterface.CreateIconProps): PrettyRatingInterface.CreateIconResponse[] => {
+	let i = +rating;
+
+	const iconsToPrint: PrettyRatingInterface.CreateIconResponse[] = [];
 	const { complete, half, empty } = icons;
 
 	for (i; i >= 1; i -= 1) {
