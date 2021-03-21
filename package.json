@@ -1,6 +1,6 @@
 {
 	"name": "pretty-rating-react",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Pretty rating formatter with React FontAwesome icons",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
