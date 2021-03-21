@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<PrettyRating /> Should create Snapshot 1`] = `
-<div>
+Array [
   <svg
     aria-hidden="true"
     className="svg-inline--fa fa-star fa-w-18 "
@@ -22,7 +22,7 @@ exports[`<PrettyRating /> Should create Snapshot 1`] = `
       fill="currentColor"
       style={Object {}}
     />
-  </svg>
+  </svg>,
   <svg
     aria-hidden="true"
     className="svg-inline--fa fa-star fa-w-18 "
@@ -43,7 +43,7 @@ exports[`<PrettyRating /> Should create Snapshot 1`] = `
       fill="currentColor"
       style={Object {}}
     />
-  </svg>
+  </svg>,
   <svg
     aria-hidden="true"
     className="svg-inline--fa fa-star fa-w-18 "
@@ -64,7 +64,7 @@ exports[`<PrettyRating /> Should create Snapshot 1`] = `
       fill="currentColor"
       style={Object {}}
     />
-  </svg>
+  </svg>,
   <svg
     aria-hidden="true"
     className="svg-inline--fa fa-star-half-alt fa-w-17 "
@@ -85,7 +85,7 @@ exports[`<PrettyRating /> Should create Snapshot 1`] = `
       fill="currentColor"
       style={Object {}}
     />
-  </svg>
+  </svg>,
   <svg
     aria-hidden="true"
     className="svg-inline--fa fa-star fa-w-18 "
@@ -106,6 +106,6 @@ exports[`<PrettyRating /> Should create Snapshot 1`] = `
       fill="currentColor"
       style={Object {}}
     />
-  </svg>
-</div>
+  </svg>,
+]
 `;
