@@ -31,7 +31,7 @@
 		"lint:fix": "tslint -p ./ --fix",
 		"prettier:check": "prettier --check ./src/**/*",
 		"prettier:format": "prettier --config .prettierrc --write ./src/**/*",
-		"test": "npm run test:update-snapshots && jest && npm run test:coverage",
+		"test": "jest && npm run test:coverage",
 		"test:update-snapshots": "jest --updateSnapshot",
 		"test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
 		"test:coverage": "jest --coverage",
