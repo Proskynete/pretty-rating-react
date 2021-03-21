@@ -2,8 +2,8 @@ import React from 'react';
 import { IconProp, library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { createIcon } from '../helper/create-icon.helper';
-import { customStyles } from '../helper/custom-styles.helper';
+import { createIcon } from '../helpers/create-icon.helper';
+import { customStyles } from '../helpers/custom-styles.helper';
 import * as PrettyRatingInterface from '../types';
 
 const defaultColors = ['#000', '#000', '#000'];
