@@ -1,4 +1,4 @@
-# Pretty rating React
+# Pretty rating React <img src="https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png" width="25" height="25" />
 
 A small and simple library that transform you rating in icons for you web
 
@@ -13,7 +13,7 @@ A small and simple library that transform you rating in icons for you web
 To install as npm dev dependency
 
 ```sh
-npm install pretty-rating-react --save-dev
+npm i pretty-rating-react
 ```
 
 ## API Documentation
