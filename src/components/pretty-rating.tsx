@@ -15,7 +15,7 @@ export const PrettyRating = ({
 	max = defaultValues.max,
 	colors = defaultValues.colors,
 }: PrettyRatingInterface.Props) => {
-	const iconsToRender = createIcon({ value: +value, icons, max: +max });
+	const iconsToRender = createIcon({ value, icons, max });
 
 	return (
 		<div>

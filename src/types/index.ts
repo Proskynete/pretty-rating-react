@@ -6,9 +6,9 @@ export interface AllowIconsType {
 	empty: string | IconDefinition;
 }
 export interface Props {
-	value: number | string;
+	value: number;
 	icons?: AllowIconsType;
-	max?: number | string;
+	max?: number;
 	colors?: string[];
 }
 

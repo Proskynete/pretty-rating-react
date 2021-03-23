@@ -3,7 +3,7 @@ import { AllowIconsType } from '../types';
 
 interface DefaultValuesInterface {
 	icons: AllowIconsType;
-	max: number | string;
+	max: number;
 	colors: string[];
 }
 
@@ -11,7 +11,7 @@ export const defaultValues: DefaultValuesInterface = {
 	icons: {
 		complete: faStar,
 		half: faStarHalfAlt,
-		empty: 'star',
+		empty: faStar,
 	},
 	max: 5,
 	colors: ['#000', '#000', '#000'],

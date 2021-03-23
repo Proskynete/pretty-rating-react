@@ -1,4 +1,4 @@
-# Pretty rating React
+# Pretty rating React <img src="https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png" width="25" height="25" />
 
 A small and simple library that transform you rating in icons for you web
 
@@ -22,14 +22,15 @@ npm install pretty-rating-react --save-dev
 
 This is the wrapper component that creates the pretty format of our rating.
 
-| Name        | Type   | Required | Default value      | Values Allowed                                           | Description                            |
-| ----------- | ------ | -------- | ------------------ | -------------------------------------------------------- | -------------------------------------- |
-| rating      | number | true     | -                  | Positive floats or integers numbers                      | Rating that we will transform to icons |
-| icons       | object | true     | -                  | This object receive 3 attributes (complete, half, empty) | Class names foreach element           |
-| iconsNumber | number | false    | 5                  | Positive integers numbers                                | Number of icons to create              |
-| setColors   | array  | false    | [#000, #000, #000] | Hexadecimal colors                                       | Colors with which icons are rendered   |
+| Name        | Type                      | Required | Default value                                                             | Values Allowed                               | Description                                                                                                                                 |
+| ----------- | ------------------------- | -------- | ------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| value       | number                    | true     | -                                                                         | Positive integers or floats                  | Rating that we will transform to icons                                                                                                      |
+| icons       | object                    | false    | `complete` and `empty` with *_faStar_* and `half` with *_faStarHalfAlt_*  | Each keys allow string or FontAwesome´s icon | Object with 3 states: complete when the rating number is integer, half when it is floating and empty to fill if it is missing for the total |
+| max         | number                    | false    | 5                                                                         | Positive integers                            | Number of icons to create                                                                                                                   |
+| colors      | array                     | false    | ["#000", "#000", "#000"]                                                  | Hexadecimal - RGB - HSLA - Color Names       | Colors with which icons are rendered                                                                                                        |
 
-The `iconsNumber` determines the number of icons to render, it's related to `rating`. So, if the `iconsNumber` is 5, the rating must be from 0 to 5.
+The `icons` type is an object with 3 keys (complete, half and empty).
+The`max` determines the number of icons to render, it's related to `value`. So, if the`max` is 5, the rating must be from 0 to 5.
 
 ## How to use it
 
