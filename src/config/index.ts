@@ -11,7 +11,7 @@ export const defaultValues: defaultValuesInterface = {
 	icons: {
 		complete: faStar,
 		half: faStarHalfAlt,
-		empty: faStar,
+		empty: 'star',
 	},
 	max: 5,
 	colors: ['#000', '#000', '#000'],

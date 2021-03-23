@@ -18,7 +18,7 @@ export const PrettyRating = ({
 	const iconsToRender = createIcon({ value: +value, icons, max: +max });
 
 	return (
-		<>
+		<div>
 			{iconsToRender.map((icon, i) => {
 				return (
 					<FontAwesomeIcon
@@ -39,6 +39,6 @@ export const PrettyRating = ({
 					/>
 				);
 			})}
-		</>
+		</div>
 	);
 };
