@@ -13,7 +13,7 @@ A small and simple library that transform you rating in icons for you web
 To install as npm dev dependency
 
 ```sh
-npm install pretty-rating-react --save-dev
+npm i pretty-rating-react
 ```
 
 ## API Documentation
@@ -34,92 +34,35 @@ The`max` determines the number of icons to render, it's related to `value`. So, 
 
 ## How to use it
 
-The following snippet will show you how to use the library: (Example with icons of [FontAwesome](https://fontawesome.com/))
+The following snippet will show you how to use the library: (Example with icons of [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react))
 
-**_Using class components:_**
-
-```js
-import React, { Component } from 'react';
-import PrettyRating from 'pretty-rating-react';
-
-class Main extends Component {
- render() {
-  const icons = {
-   star: {
-    complete: 'fa fa-star',
-    half: 'fas fa-star-half-alt',
-    empty: 'far fa-star',
-   },
-   heart: {
-    complete: 'fas fa-heart',
-    half: 'fas fa-heart-broken',
-    empty: 'fas fa-heart',
-   },
-  };
-
-  const colors = {
-   star: ['#d9ad26', '#d9ad26', '#434b4d'],
-   heart: ['#9b111e', '#a83f39'],
-  };
-
-  return (
-   <div>
-    <div>
-     <h1>Assesment</h1>
-     <PrettyRating rating={5} icons={icons.star} setColors={colors.star} />
-    </div>
-
-    <div>
-     <h1>Assesment</h1>
-     <PrettyRating
-      rating={3.5}
-      icons={icons.star}
-      setColors={colors.star}
-     />
-    </div>
-
-    <div>
-     <h1>6.5/10 life points </h1>
-     <PrettyRating
-      rating={6.5}
-      icons={icons.heart}
-      setColors={colors.heart}
-      iconsNumber={10}
-     />
-    </div>
-
-    <div>
-     <h1>Full life points </h1>
-     <PrettyRating
-      rating={10}
-      icons={icons.heart}
-      setColors={colors.heart}
-      iconsNumber={10}
-     />
-    </div>
-   </div>
-  );
- }
-}
-```
-
-**_Using function components:_**
+**Using function components (_without Typescript_):**
 
 ```js
 import React from 'react';
-import PrettyRating from 'pretty-rating-react';
+import PrettyRating from "pretty-rating-react";
+import {
+  faHeart,
+  faHeartBroken,
+  faStar,
+  faStarHalfAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart as farHeart,
+  faStar as farStar,
+} from "@fortawesome/free-regular-svg-icons";
 
 const icons = {
- star: {
-  complete: 'fa fa-star',
-  half: 'fas fa-star-half-alt',
-  empty: 'far fa-star',
- },
- heart: {
-  complete: 'fas fa-heart',
-  half: 'fas fa-heart-broken',
-  empty: 'fas fa-heart',
- },
+  star: {
+    complete: faStar,
+    half: faStarHalfAlt,
+    empty: farStar,
+  },
+  heart: {
+    complete: faHeart,
+    half: faHeartBroken,
+    empty: farHeart,
+  },
 };
 
 const colors = {
@@ -128,6 +71,80 @@ const colors = {
 };
 
 const Main = () => (
+ <div>
+  <div>
+   <h1>Assesment</h1>
+   <PrettyRating rating={5} icons={icons.star} setColors={colors.star} />
+  </div>
+
+  <div>
+   <h1>Assesment</h1>
+   <PrettyRating rating={3.5} icons={icons.star} setColors={colors.star} />
+  </div>
+
+  <div>
+   <h1>6.5/10 life points </h1>
+   <PrettyRating
+    rating={6.5}
+    icons={icons.heart}
+    setColors={colors.heart}
+    iconsNumber={10}
+   />
+  </div>
+
+  <div>
+   <h1>Full life points </h1>
+   <PrettyRating
+    rating={10}
+    icons={icons.heart}
+    setColors={colors.heart}
+    iconsNumber={10}
+   />
+  </div>
+ </div>
+);
+```
+
+**Using function components (_with Typescript_):**
+
+```js
+import React, { FC } from 'react';
+import PrettyRating, { IconsInterface } from "pretty-rating-react";
+import {
+  faHeart,
+  faHeartBroken,
+  faStar,
+  faStarHalfAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart as farHeart,
+  faStar as farStar,
+} from "@fortawesome/free-regular-svg-icons";
+
+interface CustomIconsInterface {
+  star: IconsInterface;
+  heart: IconsInterface;
+}
+
+const icons: CustomIconsInterface = {
+  star: {
+    complete: faStar,
+    half: faStarHalfAlt,
+    empty: farStar,
+  },
+  heart: {
+    complete: faHeart,
+    half: faHeartBroken,
+    empty: farHeart,
+  },
+};
+
+const colors = {
+ star: ['#d9ad26', '#d9ad26', '#434b4d'],
+ heart: ['#9b111e', '#a83f39'],
+};
+
+const Main: FC = () => (
  <div>
   <div>
    <h1>Assesment</h1>
