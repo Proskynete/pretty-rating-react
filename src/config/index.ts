@@ -1,13 +1,13 @@
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { AllowIconsType } from '../types';
 
-interface defaultValuesInterface {
+interface DefaultValuesInterface {
 	icons: AllowIconsType;
 	max: number | string;
 	colors: string[];
 }
 
-export const defaultValues: defaultValuesInterface = {
+export const defaultValues: DefaultValuesInterface = {
 	icons: {
 		complete: faStar,
 		half: faStarHalfAlt,
