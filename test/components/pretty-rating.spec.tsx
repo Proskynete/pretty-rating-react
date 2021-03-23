@@ -22,9 +22,14 @@ describe('<PrettyRating />', () => {
 		};
 	});
 
-	it('Should create Snapshot', () => {
+	it.only('Should create Snapshot', () => {
 		const component = renderer.create(
-			<PrettyRating value={value} icons={icons} />,
+			<PrettyRating
+				value={value}
+				icons={icons}
+				colors={['#000', '#000', '#000']}
+				max={5}
+			/>,
 		);
 
 		const snapshot = component.toJSON();
