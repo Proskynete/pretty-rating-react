@@ -10,11 +10,11 @@ import { PrettyRating } from '../../src/components/pretty-rating';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<PrettyRating />', () => {
-	let rating: number;
+	let value: number;
 	let icons: AllowIconsType;
 
 	beforeEach(() => {
-		rating = 3.5;
+		value = 3.5;
 		icons = {
 			complete: faStar,
 			half: faStarHalfAlt,
@@ -24,7 +24,7 @@ describe('<PrettyRating />', () => {
 
 	it('Should create Snapshot', () => {
 		const component = renderer.create(
-			<PrettyRating rating={rating} icons={icons} />,
+			<PrettyRating value={value} icons={icons} />,
 		);
 
 		const snapshot = component.toJSON();
