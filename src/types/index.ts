@@ -5,27 +5,27 @@ export interface AllowIconsType {
 	half: string | IconDefinition;
 	empty: string | IconDefinition;
 }
-export interface BaseInterface {
-	rating: number | string;
-	icons: AllowIconsType;
-}
-export interface Props extends BaseInterface {
-	setColors?: string[];
-	iconsNumber?: number;
+export interface Props {
+	value: number | string;
+	icons?: AllowIconsType;
+	max?: number | string;
+	colors?: string[];
 }
 
-export interface CreateIconProps extends BaseInterface {
-	iconsNumber: number;
-}
-
-export interface CustomStylesProps {
-	currentIcon: string | IconDefinition;
+export interface CreateIconProps {
+	value: number;
 	icons: AllowIconsType;
-	colors: string[];
-	type: string;
+	max: number;
 }
 
 export interface CreateIconResponse {
 	name: string | IconDefinition;
+	type: string;
+}
+
+export interface CustomStylesProps {
+	current: string | IconDefinition;
+	icons: AllowIconsType;
+	colors: string[];
 	type: string;
 }

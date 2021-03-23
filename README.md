@@ -25,7 +25,7 @@ This is the wrapper component that creates the pretty format of our rating.
 | Name        | Type   | Required | Default value      | Values Allowed                                           | Description                            |
 | ----------- | ------ | -------- | ------------------ | -------------------------------------------------------- | -------------------------------------- |
 | rating      | number | true     | -                  | Positive floats or integers numbers                      | Rating that we will transform to icons |
-| icons       | object | true     | -                  | This object receive 3 attributes (complete, half, empty) | Class names foreach elements           |
+| icons       | object | true     | -                  | This object receive 3 attributes (complete, half, empty) | Class names foreach element           |
 | iconsNumber | number | false    | 5                  | Positive integers numbers                                | Number of icons to create              |
 | setColors   | array  | false    | [#000, #000, #000] | Hexadecimal colors                                       | Colors with which icons are rendered   |
 
