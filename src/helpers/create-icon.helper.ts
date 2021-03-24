@@ -1,11 +1,11 @@
 import * as PrettyRatingInterface from '../types';
 
 export const createIcon = ({
-	rating,
+	value,
 	icons,
-	iconsNumber,
+	max,
 }: PrettyRatingInterface.CreateIconProps): PrettyRatingInterface.CreateIconResponse[] => {
-	let i = +rating;
+	let i = +value;
 
 	const iconsToPrint: PrettyRatingInterface.CreateIconResponse[] = [];
 	const { complete, half, empty } = icons;
@@ -18,7 +18,7 @@ export const createIcon = ({
 		iconsToPrint.push({ name: half, type: 'half' });
 	}
 
-	while (iconsToPrint.length < iconsNumber) {
+	while (iconsToPrint.length < max) {
 		iconsToPrint.push({ name: empty, type: 'empty' });
 	}
 
