@@ -10,7 +10,7 @@ A small and simple library that transform you rating in icons for you web
 
 ## Getting started
 
-To install as npm dev dependency
+To install as npm dependency
 
 ```sh
 npm i pretty-rating-react
@@ -30,7 +30,7 @@ This is the wrapper component that creates the pretty format of our rating.
 | colors      | array                     | false    | ["#000", "#000", "#000"]                                                  | Hexadecimal - RGB - HSLA - Color Names       | Colors with which icons are rendered.                                                                                                        |
 
 The `max` prop determines the number of icons to render, it's related to `value`. So, if the`max` is 5, the rating must be from 0 to 5.
-The indexes of array of colors prop represent the color to icons to render. colors[0] is for the`complete` icons, colors[1] is for the `half` icons and colors[2] is for the `empty` icons.
+The indexes of array of `colors` prop represent the color to icons to render. colors[0] is for the`complete` icons, colors[1] is for the `half` icons and colors[2] is for the `empty` icons.
 
 ## How to use it
 
