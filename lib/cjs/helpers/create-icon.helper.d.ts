@@ -1,2 +1,2 @@
 import * as PrettyRatingInterface from '../types';
-export declare const createIcon: ({ rating, icons, iconsNumber, }: PrettyRatingInterface.CreateIconProps) => PrettyRatingInterface.CreateIconResponse[];
+export declare const createIcon: ({ value, icons, max, }: PrettyRatingInterface.CreateIconProps) => PrettyRatingInterface.CreateIconResponse[];
