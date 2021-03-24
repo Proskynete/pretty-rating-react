@@ -22,14 +22,15 @@ npm i pretty-rating-react
 
 This is the wrapper component that creates the pretty format of our rating.
 
-| Name        | Type   | Required | Default value      | Values Allowed                                           | Description                            |
-| ----------- | ------ | -------- | ------------------ | -------------------------------------------------------- | -------------------------------------- |
-| rating      | number | true     | -                  | Positive floats or integers numbers                      | Rating that we will transform to icons |
-| icons       | object | true     | -                  | This object receive 3 attributes (complete, half, empty) | Class names foreach elements           |
-| iconsNumber | number | false    | 5                  | Positive integers numbers                                | Number of icons to create              |
-| setColors   | array  | false    | [#000, #000, #000] | Hexadecimal colors                                       | Colors with which icons are rendered   |
+| Name        | Type                      | Required | Default value                                                             | Values Allowed                               | Description                                                                                                                                  |
+| ----------- | ------------------------- | -------- | ------------------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| value       | number                    | true     | -                                                                         | Positive integers or floats                  | Rating that we will transform to icons.                                                                                                      |
+| icons       | object                    | false    | `complete` and `empty` with *_faStar_* and `half` with *_faStarHalfAlt_*  | Each keys allow string or FontAwesome´s icon | Object with 3 states: complete when the rating number is integer, half when it is floating and empty to fill if it is missing for the total. |
+| max         | number                    | false    | 5                                                                         | Positive integers                            | Number of icons to create.                                                                                                                   |
+| colors      | array                     | false    | ["#000", "#000", "#000"]                                                  | Hexadecimal - RGB - HSLA - Color Names       | Colors with which icons are rendered.                                                                                                        |
 
-The `iconsNumber` determines the number of icons to render, it's related to `rating`. So, if the `iconsNumber` is 5, the rating must be from 0 to 5.
+The `max` prop determines the number of icons to render, it's related to `value`. So, if the`max` is 5, the rating must be from 0 to 5.
+The indexes of array of colors prop represent the color to icons to render. colors[0] is for the`complete` icons, colors[1] is for the `half` icons and colors[2] is for the `empty` icons.
 
 ## How to use it
 
@@ -42,8 +43,8 @@ import React from 'react';
 import PrettyRating from "pretty-rating-react";
 import {
   faHeart,
-  faHeartBroken,
   faStar,
+  faHeartBroken,
   faStarHalfAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -73,32 +74,22 @@ const Main = () => (
  <div>
   <div>
    <h1>Assesment</h1>
-   <PrettyRating rating={5} icons={icons.star} setColors={colors.star} />
+   <PrettyRating value={5} icons={icons.star} colors={colors.star} />
   </div>
 
   <div>
    <h1>Assesment</h1>
-   <PrettyRating rating={3.5} icons={icons.star} setColors={colors.star} />
+   <PrettyRating value={3.5} icons={icons.star} colors={colors.star} />
   </div>
 
   <div>
-   <h1>6.5/10 life points </h1>
-   <PrettyRating
-    rating={6.5}
-    icons={icons.heart}
-    setColors={colors.heart}
-    iconsNumber={10}
-   />
+   <h1>6.5/10 life points</h1>
+   <PrettyRating value={6.5} icons={icons.heart} colors={colors.heart} max={10} />
   </div>
 
   <div>
-   <h1>Full life points </h1>
-   <PrettyRating
-    rating={10}
-    icons={icons.heart}
-    setColors={colors.heart}
-    iconsNumber={10}
-   />
+   <h1>Full life points</h1>
+   <PrettyRating value={10} icons={icons.heart} colors={colors.heart} max={10} />
   </div>
  </div>
 );
@@ -107,7 +98,7 @@ const Main = () => (
 **Using function components (_with Typescript_):**
 
 ```js
-import React, { FC } from 'react';
+import React from 'react';
 import PrettyRating, { IconsInterface } from "pretty-rating-react";
 import {
   faHeart,
@@ -143,36 +134,26 @@ const colors = {
  heart: ['#9b111e', '#a83f39'],
 };
 
-const Main: FC = () => (
+const Main = () => (
  <div>
   <div>
    <h1>Assesment</h1>
-   <PrettyRating rating={5} icons={icons.star} setColors={colors.star} />
+   <PrettyRating value={5} icons={icons.star} colors={colors.star} />
   </div>
 
   <div>
    <h1>Assesment</h1>
-   <PrettyRating rating={3.5} icons={icons.star} setColors={colors.star} />
+   <PrettyRating value={3.5} icons={icons.star} colors={colors.star} />
   </div>
 
   <div>
-   <h1>6.5/10 life points </h1>
-   <PrettyRating
-    rating={6.5}
-    icons={icons.heart}
-    setColors={colors.heart}
-    iconsNumber={10}
-   />
+   <h1>6.5/10 life points</h1>
+   <PrettyRating value={6.5} icons={icons.heart} colors={colors.heart} max={10} />
   </div>
 
   <div>
-   <h1>Full life points </h1>
-   <PrettyRating
-    rating={10}
-    icons={icons.heart}
-    setColors={colors.heart}
-    iconsNumber={10}
-   />
+   <h1>Full life points</h1>
+   <PrettyRating value={10} icons={icons.heart} colors={colors.heart} max={10} />
   </div>
  </div>
 );

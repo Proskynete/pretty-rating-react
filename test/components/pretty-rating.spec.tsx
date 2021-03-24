@@ -1,33 +1,37 @@
 import React from 'react';
-import Enzyme from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import renderer from 'react-test-renderer';
-
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
-import { AllowIconsType } from '../../src/types';
 import { PrettyRating } from '../../src/components/pretty-rating';
+import { AllowIconsType } from '../../src/types';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<PrettyRating />', () => {
-	let rating: number;
-	let icons: AllowIconsType;
+	it('Should create Snapshot', () => {
+		const component = renderer.create(<PrettyRating value={3.5} />);
 
-	beforeEach(() => {
-		rating = 3.5;
-		icons = {
+		const snapshot = component.toJSON();
+		expect(snapshot).toMatchSnapshot();
+	});
+
+	it('Should render with default props', () => {
+		const value: number = 0.5;
+		const max: number = 3;
+		const colors: string[] = ['#fff', '#000', '#ccc'];
+		const icons: AllowIconsType = {
 			complete: faStar,
 			half: faStarHalfAlt,
 			empty: 'star',
 		};
-	});
 
-	it('Should create Snapshot', () => {
-		const component = renderer.create(
-			<PrettyRating rating={rating} icons={icons} />,
+		const components = shallow(
+			<PrettyRating value={value} max={max} colors={colors} icons={icons} />,
 		);
 
-		const snapshot = component.toJSON();
-		expect(snapshot).toMatchSnapshot();
+		expect(components.find('div').text()).toEqual(
+			'<FontAwesomeIcon /><FontAwesomeIcon /><FontAwesomeIcon />',
+		);
 	});
 });

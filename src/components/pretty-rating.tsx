@@ -5,20 +5,20 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { createIcon } from '../helpers/create-icon.helper';
 import { customStyles } from '../helpers/custom-styles.helper';
 import * as PrettyRatingInterface from '../types';
+import { defaultValues } from '../config';
 
-const defaultColors = ['#000', '#000', '#000'];
 library.add(fas);
 
 export const PrettyRating = ({
-	rating,
-	icons,
-	iconsNumber = 5,
-	setColors = defaultColors,
+	value,
+	icons = defaultValues.icons,
+	max = defaultValues.max,
+	colors = defaultValues.colors,
 }: PrettyRatingInterface.Props) => {
-	const iconsToRender = createIcon({ rating, icons, iconsNumber });
+	const iconsToRender = createIcon({ value, icons, max });
 
 	return (
-		<>
+		<div>
 			{iconsToRender.map((icon, i) => {
 				return (
 					<FontAwesomeIcon
@@ -30,15 +30,15 @@ export const PrettyRating = ({
 						}
 						style={{
 							color: customStyles({
-								currentIcon: icon.name,
+								current: icon.name,
 								icons,
 								type: icon.type,
-								colors: setColors,
+								colors,
 							}),
 						}}
 					/>
 				);
 			})}
-		</>
+		</div>
 	);
 };
