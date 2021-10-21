@@ -10,8 +10,9 @@
 	],
 	"repository": "https://github.com/Proskynete/pretty-rating-react",
 	"author": {
-		"name": "Eduardo Alvarez",
-		"email": "soy@eduardoalvarez.dev"
+		"name": "Eduardo Esteban Álvarez Castañeda",
+		"email": "soy@eduardoalvarez.dev",
+		"url": "https://eduardoalvarez.dev"
 	},
 	"license": "MIT",
 	"keywords": [
