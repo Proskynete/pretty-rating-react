@@ -33,9 +33,7 @@ describe('Helper', () => {
 			const { icons, max } = defaultValues;
 
 			const result = createIcon({ value, icons, max });
-			expect(result).toEqual(
-				expect.arrayContaining([{ name: 'far fa-star', type: 'empty' }]),
-			);
+			expect(result).toEqual(expect.arrayContaining([{ name: 'far fa-star', type: 'empty' }]));
 			expect(result).toEqual(
 				expect.not.arrayContaining([
 					{ name: 'fas fa-star', type: 'complete' },
@@ -79,9 +77,7 @@ describe('Helper', () => {
 			const { icons, max } = defaultValues;
 
 			const result = createIcon({ value, icons, max });
-			expect(result).toEqual(
-				expect.arrayContaining([{ name: 'fas fa-star', type: 'complete' }]),
-			);
+			expect(result).toEqual(expect.arrayContaining([{ name: 'fas fa-star', type: 'complete' }]));
 			expect(result).toEqual(
 				expect.not.arrayContaining([
 					{ name: 'fas fa-star-half-alt', type: 'half' },
