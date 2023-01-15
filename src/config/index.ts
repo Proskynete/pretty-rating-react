@@ -5,6 +5,7 @@ interface DefaultValuesInterface {
 	icons: AllowIconsType;
 	max: number;
 	colors: string[];
+	disabled: boolean;
 }
 
 export const defaultValues: DefaultValuesInterface = {
@@ -15,4 +16,5 @@ export const defaultValues: DefaultValuesInterface = {
 	},
 	max: 5,
 	colors: ['#000', '#000', '#000'],
+	disabled: false,
 };

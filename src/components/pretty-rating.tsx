@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { IconProp, library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -9,11 +9,12 @@ import { defaultValues } from '../config';
 
 library.add(fas);
 
-export const PrettyRating = ({
+const PrettyRating = ({
 	value,
 	icons = defaultValues.icons,
 	max = defaultValues.max,
 	colors = defaultValues.colors,
+	disabled = defaultValues.disabled,
 	onChange,
 }: PrettyRatingInterface.Props) => {
 	const [iconsToRenderState, setIconsToRenderState] =
@@ -46,7 +47,7 @@ export const PrettyRating = ({
 						key={i}
 						icon={typeof icon.name === 'string' ? (icon.name as IconProp) : icon.name}
 						style={{
-							cursor: 'pointer',
+							cursor: !disabled ? 'pointer' : 'default',
 							color: customStyles({
 								current: icon.name,
 								icons,
@@ -54,12 +55,15 @@ export const PrettyRating = ({
 								colors,
 							}),
 						}}
-						onMouseEnter={() => handleOnMouseEnter(i + 1)}
-						onMouseLeave={() => handleOnMouseLeave()}
-						onClick={() => handleOnChange(i + 1)}
+						onMouseEnter={() => !disabled && handleOnMouseEnter(i + 1)}
+						onMouseLeave={() => !disabled && handleOnMouseLeave()}
+						onClick={() => !disabled && handleOnChange(i + 1)}
 					/>
 				);
 			})}
 		</>
 	);
 };
+
+const MemoizedPrettyRating = memo(PrettyRating);
+export { MemoizedPrettyRating as PrettyRating };
