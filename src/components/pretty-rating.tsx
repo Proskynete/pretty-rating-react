@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { createIcon } from '../helpers/create-icon.helper';
 import { customStyles } from '../helpers/custom-styles.helper';
-import * as PrettyRatingInterface from '../types';
 import { defaultValues } from '../config';
+import { CreateIconResponse, PrettyRatingProps } from '../types';
 
 library.add(fas);
 
@@ -16,9 +16,8 @@ const PrettyRating = ({
 	colors = defaultValues.colors,
 	disabled = defaultValues.disabled,
 	onChange,
-}: PrettyRatingInterface.Props) => {
-	const [iconsToRenderState, setIconsToRenderState] =
-		useState<PrettyRatingInterface.CreateIconResponse[]>();
+}: PrettyRatingProps) => {
+	const [iconsToRenderState, setIconsToRenderState] = useState<CreateIconResponse[]>();
 
 	useEffect(() => {
 		const iconsToRender = createIcon({ value, icons, max });

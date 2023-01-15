@@ -1,12 +1,14 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
+type AllowIcons = 'complete' | 'half' | 'empty';
+
 export interface AllowIconsType {
 	complete: string | IconDefinition;
 	half: string | IconDefinition;
 	empty: string | IconDefinition;
 }
 
-export interface Props {
+export interface PrettyRatingProps {
 	value: number;
 	icons?: AllowIconsType;
 	max?: number;
@@ -23,12 +25,12 @@ export interface CreateIconProps {
 
 export interface CreateIconResponse {
 	name: string | IconDefinition;
-	type: string;
+	type: AllowIcons;
 }
 
 export interface CustomStylesProps {
 	current: string | IconDefinition;
 	icons: AllowIconsType;
 	colors: string[];
-	type: string;
+	type: AllowIcons;
 }
