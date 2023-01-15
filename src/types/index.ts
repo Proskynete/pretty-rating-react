@@ -5,11 +5,13 @@ export interface AllowIconsType {
 	half: string | IconDefinition;
 	empty: string | IconDefinition;
 }
+
 export interface Props {
 	value: number;
 	icons?: AllowIconsType;
 	max?: number;
 	colors?: string[];
+	onChange?: (value: number) => void;
 }
 
 export interface CreateIconProps {

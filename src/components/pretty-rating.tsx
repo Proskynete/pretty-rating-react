@@ -14,15 +14,29 @@ export const PrettyRating = ({
 	icons = defaultValues.icons,
 	max = defaultValues.max,
 	colors = defaultValues.colors,
+	onChange,
 }: PrettyRatingInterface.Props) => {
-	const [_value, setValue] = useState<number>(value);
 	const [iconsToRenderState, setIconsToRenderState] =
 		useState<PrettyRatingInterface.CreateIconResponse[]>();
 
 	useEffect(() => {
-		const iconsToRender = createIcon({ value: _value, icons, max });
+		const iconsToRender = createIcon({ value, icons, max });
 		setIconsToRenderState(iconsToRender);
-	}, [_value]);
+	}, []);
+
+	const handleOnMouseEnter = (i: number) => {
+		const iconsToRender = createIcon({ value: i, icons, max });
+		setIconsToRenderState(iconsToRender);
+	};
+
+	const handleOnMouseLeave = () => {
+		const iconsToRender = createIcon({ value, icons, max });
+		setIconsToRenderState(iconsToRender);
+	};
+
+	const handleOnChange = (newValue: number) => {
+		onChange && onChange(newValue);
+	};
 
 	return (
 		<>
@@ -31,17 +45,6 @@ export const PrettyRating = ({
 					<FontAwesomeIcon
 						key={i}
 						icon={typeof icon.name === 'string' ? (icon.name as IconProp) : icon.name}
-						onMouseEnter={() => {
-							const iconsToRender = createIcon({ value: i + 1, icons, max });
-							setIconsToRenderState(iconsToRender);
-						}}
-						onMouseLeave={() => {
-							const iconsToRender = createIcon({ value: _value, icons, max });
-							setIconsToRenderState(iconsToRender);
-						}}
-						onClick={() => {
-							setValue(i + 1);
-						}}
 						style={{
 							cursor: 'pointer',
 							color: customStyles({
@@ -51,6 +54,9 @@ export const PrettyRating = ({
 								colors,
 							}),
 						}}
+						onMouseEnter={() => handleOnMouseEnter(i + 1)}
+						onMouseLeave={() => handleOnMouseLeave()}
+						onClick={() => handleOnChange(i + 1)}
 					/>
 				);
 			})}

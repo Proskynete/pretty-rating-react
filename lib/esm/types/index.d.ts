@@ -9,6 +9,7 @@ export interface Props {
     icons?: AllowIconsType;
     max?: number;
     colors?: string[];
+    onChange?: (value: number) => void;
 }
 export interface CreateIconProps {
     value: number;
